@@ -1,5 +1,7 @@
 /*
  * 面向对象
+ * 构造函数
+ * 静态成员变量，静态方法
 */
 public class OOPTest {
 	public static void main(String[] args) {
@@ -18,6 +20,16 @@ public class OOPTest {
 		
 		Student stu2 = new Student("小赵", 19);
 		stu2.run();
+		
+		//静态成员变量，对于一个class，只有一个
+		//静态方法只能调用静态方法，只能使用静态成员变量
+		//调用静态方法或使用静态成员变量，可以用类名，
+		//也可以用对象名
+		System.out.println(Student.studentCount);
+		System.out.println(stu2.studentCount);
+		Student.resetCount();
+		stu2.resetCount();
+		System.out.println(Student.studentCount);
 	}
 	
 	//对象作为方法的参数
@@ -32,11 +44,13 @@ public class OOPTest {
 class Student {
 	String name;//缺省为public
 	private int age;
+	public static int studentCount;//静态成员变量
 	
 	//构造函数，若未声明，会自动添加无参构造
 	//可以缺省public
 	//若定义为private，则无法使用这个参数列表的构造函数
 	Student() {
+		studentCount++;
 		System.out.println("无参构造");
 		age = 18;
 		name = "无参构造的学生";
@@ -62,5 +76,9 @@ class Student {
 	
 	public void eat() {
 		System.out.println("吃");
+	}
+	
+	public static void resetCount() {
+		studentCount = 0;
 	}
 }
