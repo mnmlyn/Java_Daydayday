@@ -9,6 +9,7 @@
  * 1*1=1
  * 1*2=2 2*2=4
  * ...
+ * 4. 标号，可以用break跳出指定的循环
 */
 public class ForWhile {
 	public static void main(String[] args) {
@@ -41,5 +42,15 @@ public class ForWhile {
 			}
 			System.out.println("");
 		}
+		
+		//标号，跳出指定循环
+		int sum = 0;
+		outer: for (int i=0; i < 10; ++i) {
+			inner: for (int j = 0; j < 10; ++j) {
+				++sum;
+				if (j == 1)break outer;
+			}
+		}
+		System.out.println("sum=" + sum);
 	}
 }
