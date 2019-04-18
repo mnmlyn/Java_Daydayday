@@ -15,6 +15,9 @@ public class OOPTest {
 		//Java中显然不是这样
 		
 		initStudent(new Student());//匿名对象
+		
+		Student stu2 = new Student("小赵", 19);
+		stu2.run();
 	}
 	
 	//对象作为方法的参数
@@ -29,6 +32,21 @@ public class OOPTest {
 class Student {
 	String name;//缺省为public
 	private int age;
+	
+	//构造函数，若未声明，会自动添加无参构造
+	//可以缺省public
+	//若定义为private，则无法使用这个参数列表的构造函数
+	Student() {
+		System.out.println("无参构造");
+		age = 18;
+		name = "无参构造的学生";
+	}
+	
+	public Student(String name, int age) {
+		this.name = name;
+		this.age = age;
+		System.out.println("有参构造");
+	}
 	
 	public void setAge(int age) {
 		this.age = age;//this引用当前对象
