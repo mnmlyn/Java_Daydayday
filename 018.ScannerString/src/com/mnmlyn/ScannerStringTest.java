@@ -108,87 +108,87 @@ public class ScannerStringTest {
 		System.out.println(str9.equals(str6));// true
 
 		// String常用成员方法
-		String mystr1="abc123456";
-		String mystr2="abc";
-		String mystr3="123456";
-		String mystr4="abc";
-		String mystr5="Abc";
-		String mystr6="";
-		String mystr7=null;
+		String mystr1 = "abc123456";
+		String mystr2 = "abc";
+		String mystr3 = "123456";
+		String mystr4 = "abc";
+		String mystr5 = "Abc";
+		String mystr6 = "";
+		String mystr7 = null;
 		System.out.println("--------------------------------");
-		System.out.println(mystr2.equals(mystr4));//判断字符串是否相等
-		System.out.println(mystr5.equalsIgnoreCase(mystr4));//忽略大小写判断相等
-		System.out.println(mystr1.contains(mystr2));//是否含有子串
-		System.out.println(mystr1.startsWith(mystr2));//判断前缀
-		System.out.println(mystr1.startsWith(mystr3,3));//判断前缀，指定偏移
-		System.out.println(mystr1.endsWith(mystr3));//判断后缀
-		System.out.println(mystr6.isEmpty());//判断字符串是否为空
-		//System.out.println(mystr7.isEmpty());//不论怎样isEmpty()是成员方法，有对象才能调用
-		
-		//长度，获取索引处字符，查找字符的索引，获取子串
-		//length(),charAt(),IndexOf(),lastIndexOf(),substring()
+		System.out.println(mystr2.equals(mystr4));// 判断字符串是否相等
+		System.out.println(mystr5.equalsIgnoreCase(mystr4));// 忽略大小写判断相等
+		System.out.println(mystr1.contains(mystr2));// 是否含有子串
+		System.out.println(mystr1.startsWith(mystr2));// 判断前缀
+		System.out.println(mystr1.startsWith(mystr3, 3));// 判断前缀，指定偏移
+		System.out.println(mystr1.endsWith(mystr3));// 判断后缀
+		System.out.println(mystr6.isEmpty());// 判断字符串是否为空
+		// System.out.println(mystr7.isEmpty());//不论怎样isEmpty()是成员方法，有对象才能调用
+
+		// 长度，获取索引处字符，查找字符的索引，获取子串
+		// length(),charAt(),IndexOf(),lastIndexOf(),substring()
 		System.out.println("--------------------------------");
 		System.out.println(mystr1.length());
 		System.out.println(mystr1.charAt(2));
 		System.out.println(mystr1.indexOf('1'));
 		System.out.println(mystr1.substring(3));
-		
-		//字符串转为字节数组
+
+		// 字符串转为字节数组
 		System.out.println("--------getBytes()--------");
-		String istr1="abc啦啦啦";
-		byte[] arr4 = istr1.getBytes();//编码为系统默认编码
+		String istr1 = "abc啦啦啦";
+		byte[] arr4 = istr1.getBytes();// 编码为系统默认编码
 		for (int i = 0; i < arr4.length; i++) {
-			 System.out.print(arr4[i] + " ");//97 98 99 -64 -78 -64 -78 -64 -78
+			System.out.print(arr4[i] + " ");// 97 98 99 -64 -78 -64 -78 -64 -78
 		}
 		System.out.println();
-		
-		//字符串转换为字符数组
+
+		// 字符串转换为字符数组
 		System.out.println("--------toCharArray()--------");
-		char[] arr5=istr1.toCharArray();
+		char[] arr5 = istr1.toCharArray();
 		for (int i = 0; i < arr5.length; i++) {
-			System.out.print(arr5[i]+" ");
+			System.out.print(arr5[i] + " ");
 		}
 		System.out.println();
-		
-		//valueOf()静态方法，把任意类型转换为String，实际是调用String的构造方法
+
+		// valueOf()静态方法，把任意类型转换为String，实际是调用String的构造方法
 		System.out.println("--------valueOf()--------");
-		int b=123456;
-		String istr2=String.valueOf(b);
+		int b = 123456;
+		String istr2 = String.valueOf(b);
 		System.out.println(istr2);
-		String istr3=String.valueOf(arr5);
+		String istr3 = String.valueOf(arr5);
 		System.out.println(istr3);
-		
-		//字符串变为全部大写，变为全部小写
+
+		// 字符串变为全部大写，变为全部小写
 		System.out.println("--------toLower-Upper-Case()--------");
-		String istr4="asdfSHDISHDI啦啦啦";
+		String istr4 = "asdfSHDISHDI啦啦啦";
 		System.out.println(istr4.toLowerCase());
 		System.out.println(istr4.toUpperCase());
-		
-		//字符串拼接
+
+		// 字符串拼接
 		System.out.println("--------concat()--------");
-		String istr5="abc";
-		String istr6="defg";
+		String istr5 = "abc";
+		String istr6 = "defg";
 		System.out.println(istr5.concat(istr6));
-		
-		//字符串替换
+
+		// 字符串替换
 		System.out.println("--------replace()--------");
 		String istr7 = "   hello   world!    ";
-		System.out.println(istr7.replace('l', 'g'));//按照字符替换
-		System.out.println(istr7.replace("world", "java"));//按照子字符串替换
-		
-		//字符串两端空格的去除
+		System.out.println(istr7.replace('l', 'g'));// 按照字符替换
+		System.out.println(istr7.replace("world", "java"));// 按照子字符串替换
+
+		// 字符串两端空格的去除
 		System.out.println("--------trim()--------");
 		System.out.println(istr7.trim());
-		
-		//字符串字典序比较
+
+		// 字符串字典序比较
 		System.out.println("--------compareTo()--------");
-		String istr8="hello";
-		String istr9="head";
-		String istr10="Hello";
-		String istr11="hellohhhh";
-		System.out.println(istr8.compareTo(istr9));//若不等，返回第一个不等的元素的编码值的差。Unicode
-		System.out.println(istr8.compareTo(istr11));//若一个串是另一个的前缀，返回值是length的差
-		System.out.println(istr8.compareToIgnoreCase(istr10));//忽略大小写
+		String istr8 = "hello";
+		String istr9 = "head";
+		String istr10 = "Hello";
+		String istr11 = "hellohhhh";
+		System.out.println(istr8.compareTo(istr9));// 若不等，返回第一个不等的元素的编码值的差。Unicode
+		System.out.println(istr8.compareTo(istr11));// 若一个串是另一个的前缀，返回值是length的差
+		System.out.println(istr8.compareToIgnoreCase(istr10));// 忽略大小写
 	}
 
 }
