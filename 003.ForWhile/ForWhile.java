@@ -10,7 +10,12 @@
  * 1*2=2 2*2=4
  * ...
  * 4. 标号，可以用break跳出指定的循环
+ * 5. 学了数组和集合之后，for循环新的写法
+ * for(int x:arr){}
+ * for(String str:list){}
 */
+import java.util.ArrayList;
+
 public class ForWhile {
 	public static void main(String[] args) {
 		//水仙花数
@@ -52,5 +57,20 @@ public class ForWhile {
 			}
 		}
 		System.out.println("sum=" + sum);
+		
+		//学了数组和集合之后，for循环新的写法
+		int[] arr = {1, 2, 3, 4, 5};
+		for (int x : arr) {
+			System.out.print(x + " ");
+		}
+		System.out.println();
+		ArrayList<String> list = new ArrayList<>();
+		list.add("a");
+		list.add("b");
+		list.add("c");
+		for (String str : list) {
+			System.out.print(str + " ");
+		}
+		System.out.println();
 	}
 }
