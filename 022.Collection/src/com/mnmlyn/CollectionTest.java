@@ -76,8 +76,8 @@
  * 
  * 14. 泛型通配符
  * <?>，任意引用类型，Object及其所有子类
- * <? extends E>，E及其子类
- * <? super E>，E及其父类
+ * <? extends E>，E及其子类。比如，Collection的addAll()方法，接收集合泛型及其子类
+ * <? super E>，E及其父类。比如，TreeSet,TreeMap的构造方法，传比较器，可以是集合泛型及其父类的比较器
  * 
  * 15. 数组和集合的相互转换
  * + 数组Arrays的静态方法Arrays.asList()，将数组转换为List。
