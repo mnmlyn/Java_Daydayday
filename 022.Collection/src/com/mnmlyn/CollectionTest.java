@@ -33,6 +33,10 @@
  * 应使用ListIterator，用迭代器进行List集合的修改
  * ListIterator可以进行反向遍历
  * 
+ * 使用下标进行遍历时，可以修改集合，但是要对下标进行合适的++或--
+ * 使用迭代器进行遍历时，可以用迭代器自身的修改方法修改集合。不能用集合的修改方法，否则会有并发修改异常。
+ * 使用for(String str:list){}这种形式的循环时，不能用集合的修改方法，因为这种循环是基于迭代器的。
+ * 
  * 8. Vector已经被ArrayList替代，Vector是线程安全的
  * 其出现早于集合体系，现在也实现了List接口。
  * 原有用法：
@@ -74,10 +78,22 @@
  * <?>，任意引用类型，Object及其所有子类
  * <? extends E>，E及其子类
  * <? super E>，E及其父类
+ * 
+ * 15. 数组和集合的相互转换
+ * + 数组Arrays的静态方法Arrays.asList()，将数组转换为List。
+ * 但转换后的List不能改变长度。
+ * 只能转换引用数据类型数组，基本数据类型数组转换会将数组当做一个对象。结果并不是想要的
+ * 要想将基本数据类型的数组，转为List，最好定义其封装类型的数组
+ * + 集合转换为数组，toArray()方法
+ * 无参的方法，返回的Object数组
+ * 有参的方法，参数指定泛型。
+ *     若参数数组大小 小于等于集合大小，转换后的数组大小为集合大小。
+ *     否则，转换后的数组大小为参数数组大小
  */
 package com.mnmlyn;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Enumeration;
 import java.util.Iterator;
@@ -92,7 +108,49 @@ public class CollectionTest {
 		// Test1();
 		// Test2();
 		// Test3();
+		// Test4();
+		// Test5();
+	}
 
+	private static void Test5() {
+		// 数组转换为List
+		String[] strArr = { "a", "b", "c" };
+		List<String> list = Arrays.asList(strArr);
+		// 下边这些报错，不支持的操作
+		// list.add("d");
+		// list.clear();
+		// list.remove(0);
+		System.out.println(list);
+
+		// 基本数据类型的数组，转换为List，并不能得到想要的结果。也即不会自动装箱
+		int[] intArr = { 1, 2, 3 };
+		List<int[]> list1 = Arrays.asList(intArr);
+		System.out.println(list1);
+
+		// 要使用基本数据类型的数组，转换为List，应使用其封装类
+		Integer[] intArr2 = { 1, 2, 3 };
+		List<Integer> list2 = Arrays.asList(intArr2);
+		System.out.println(list2);
+
+		// 集合转为数组
+		ArrayList<String> list3 = new ArrayList<String>();
+		list3.add("a");
+		list3.add("b");
+		list3.add("c");
+		// 泛型参数数组的大小，小于等于集合大小
+		String[] arr3 = list.toArray(new String[0]);
+		for (String string : arr3) {
+			System.out.println(string);
+		}
+		System.out.println("--------------------------------");
+		// 泛型参数数组的大小，大于集合大小
+		String[] arr4 = list.toArray(new String[5]);
+		for (String string : arr4) {
+			System.out.println(string);
+		}
+	}
+
+	private static void Test4() {
 		// 带泛型的集合
 		ArrayList<String> al1 = new ArrayList<>();
 		al1.add("a");
