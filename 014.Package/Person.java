@@ -33,4 +33,8 @@ public class Person {
 	public int getAge() {
 		return this.age;
 	}
+	
+	public static void print() {
+		System.out.println("print");
+	}
 }
