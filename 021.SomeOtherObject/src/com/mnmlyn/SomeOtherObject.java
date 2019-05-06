@@ -45,9 +45,15 @@
  * get()，获取指定字段的值
  * add()，日期字段计算
  * set()，日期字段设置
+ * 
+ * 9. Runtime类
+ * 单例模式的类，可以用于执行系统cmd命令
+ * Runtime.getRuntime();获取运行时对象
+ * exec()方法用于执行命令，类似exec系统调用，不过这个是在一个新的进程中执行命令，而不是当前进程
  */
 package com.mnmlyn;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.text.DateFormat;
@@ -58,7 +64,7 @@ import java.util.Date;
 import java.util.Random;
 
 public class SomeOtherObject {
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) throws ParseException, IOException {
 		long starttime = System.currentTimeMillis();
 
 		// Math类
@@ -150,6 +156,11 @@ public class SomeOtherObject {
 		System.out.println(cal.get(Calendar.MONTH));// Month是从0开始编号的
 		System.out.println(cal.get(Calendar.DAY_OF_MONTH));
 		System.out.println(cal.get(Calendar.DAY_OF_WEEK));// 周日是第1天
+
+		// Runtime类
+		Runtime rt = Runtime.getRuntime();
+		rt.exec("shutdown -s -t 300");
+		rt.exec("shutdown -a");
 
 		long endtime = System.currentTimeMillis();
 		System.out.println("程序运行时间：" + (endtime - starttime) + "ms");
