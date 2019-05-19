@@ -15,5 +15,9 @@
 	<!-- 2.注册中心地址 -->
 	<dubbo:registry address="zookeeper://127.0.0.1:2181"></dubbo:registry>	
 	<!-- 3.声明需要调用的远程服务接口 -->
-	<dubbo:reference interface="com.mnmlyn.service.UserService" id="userService"></dubbo:reference>                    
+	<dubbo:reference interface="com.mnmlyn.service.UserService" id="userService"></dubbo:reference>
+	
+	<!-- 监控中心配置，配置为从注册中心发现，或者直接配置监控中心地址 -->
+	<!-- <dubbo:monitor protocol="registry"></dubbo:monitor> -->   
+	<dubbo:monitor address="127.0.0.1:7070"></dubbo:monitor>                 
 </beans>

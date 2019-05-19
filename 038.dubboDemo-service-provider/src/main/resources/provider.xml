@@ -16,4 +16,8 @@
 	<!-- 4.暴露服务，ref指向服务的真正实现对象 -->
 	<dubbo:service interface="com.mnmlyn.service.UserService" ref="userServiceImpl"></dubbo:service>
 	<bean id="userServiceImpl" class="com.mnmlyn.service.impl.UserServiceImpl"></bean>
+	
+	<!-- 监控中心配置，配置为从注册中心发现，或者直接配置监控中心地址 -->
+	<dubbo:monitor protocol="registry"></dubbo:monitor>  
+	<!-- <dubbo:monitor address="127.0.0.1:7070"></dubbo:monitor> -->  
 </beans>
