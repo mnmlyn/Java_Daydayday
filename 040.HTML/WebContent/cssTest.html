@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 四种方式引入css
+	1. 在html标签上，加style="key1: value1; key2: value2;"
+	2. 在页面head中，写入<style>标签，指定样式
+	3. 写css文件，在html文件中，用<link rel="stylesheet" type="text/css" href="xxx.css">引入
+	4. 在html中，用<style type="text/css">@import uri("xxx.css")</style>进行引入
+ -->
+
+<!-- 第二种方式 -->
+<style type="text/css">
+	h2{
+		color: yellow;
+	}
+</style>
+
+<!-- 第三种方式 -->
+<link rel="stylesheet" type="text/css" href="css/myStyleSheet1.css">
+
+<!-- 第四种方式 -->
+<style type="text/css">
+	@import url("css/myStyleSheet2.css");
+</style>
+
+</head>
+<body>
+<h1 style="color: red;">第一种引入css方式，直接在html标签中书写</h1>
+<h2>第二种引入css方式，在html文件中，用style标签引入</h2>
+<h3>第三种引入css方式，写css文件，在html中用&lt;link&gt;引入</h3>
+<h4>第四种引入css方式，写css文件，在html中用style标签引入</h4>
+
+<h3>1. html标签选择器：直接写html标签名</h3>
+<div id="firstDiv">2. id选择器：#id</div>
+<div id="secondDiv">id选择器：#id</div>
+<div class="myDivClass">3. class选择器： .class</div>
+<div class="myDivClass">优先级：#id .class htmltag</div>
+
+<form action="">
+	4. 属性选择器：<input type="text"><br>
+	根据标签的属性不同，设定不同样式：<input type="password"><br>
+</form>
+
+<a href="#">5. 这是一个链接，他的四种状态有不同的样式</a>
+
+<div>
+	<p>层级选择器示例，用空格分隔前边的选择器即可</p>
+	<div id="c1">
+		<div class="div1"><span>c1 div1</span></div>
+		<div class="div2"><span>c1 div2</span></div>
+	</div>
+	<div id="c2">
+		<div class="div1"><span>c2 div1</span></div>
+		<div class="div2"><span>c2 div2</span></div>
+	</div>
+</div>
+
+<div id="divFont">文字属性和文本属性</div>
+<div id="divBackImage">背景图片</div>
+
+<ul id="ul1">
+	<li>列表项1</li>
+	<li>列表项2</li>
+	<li>列表项3</li>
+</ul>
+<ul id="ul2">
+	<li>列表项1</li>
+	<li>列表项2</li>
+	<li>列表项3</li>
+</ul>
+
+<div class="hiddenme">这句话不显示！！！</div>
+<div id="outerDiv">
+	<div id="leftSide"></div>
+	<div id="main"></div>
+	<div id="rightSide"></div>
+	<div class="clear"></div>
+	<div id="footer">这是页面底部</div>
+</div>
+CSS盒子模型
+<div style="width: 300px; height: 300px; background-color: #efefef;">
+<div style="width: 150px; height: 150px; background-color: #df1fdf;
+			border: 10px solid gray;
+			padding: 10px;
+			margin: 20px;">
+	<div style="width: 50px; height:50px; background-color: yellow;
+				margin: 30px;"></div>
+			</div>
+
+</div>
+</body>
+</html>

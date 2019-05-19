@@ -1,0 +1,146 @@
+@charset "UTF-8";
+/*
+css选择器：
+1. 基本选择器
+	(1). 直接写html的标签名
+	(2). #id，选择id
+	(3). .class，选择class
+2. 属性选择器
+	前边是基本选择器中的一种，中括号中加属性，等号，值
+	比如选择type属性为password的input标签
+	input[type="password"]
+3. 伪元素选择器
+	a标签的四种状态
+		a:link  初始
+		a:hover  悬停
+		a:active  点下
+		a:visited  点击过
+4. 层级选择器
+	空格分隔基本的选择器即可
+*/
+h3{
+	color: blue;
+}
+#firstDiv{
+	color: red;
+	background-color: #80ffff;
+}
+#secondDiv{
+	color: green;
+	background-color: #ff80ff;
+}
+.myDivClass{
+	color: #ffff80;
+	background-color: #2389fe;
+}
+
+/*属性选择器，标签名，中括号，加属性等号双引号值*/
+input[type="password"]{
+	background-color: pink;
+}
+input[type="text"]{
+	background-color: yellow;
+}
+
+/*伪元素选择器，主要是a标签*/
+a:link {
+	color: red;
+}
+a:hover {
+	color: yellow;
+}
+a:active {
+	color: blue;
+}
+a:visited {
+	color: green;
+}
+
+/*层级选择器*/
+.div1 span{
+	color: pink;
+}
+#c1 .div2 span{
+	color: red;
+}
+#c2 .div2 span{
+	color: blue;
+}
+
+/*
+css属性
+1. 文字属性
+	font-size
+	font-family:字体
+2. 文本属性
+	color
+	text-decoration:下划线
+		none,underline
+	text-align:对齐
+3. 背景属性
+	background-color
+	background-image
+	background-repeat
+4. 列表属性
+	list-style-type:列表前的标志样式
+	list-stype-image:列表前的图片
+5. 尺寸属性
+	width
+	height
+6. 显示属性
+	display
+		none,block,inline
+7. 浮动属性
+	float
+		left,right
+	clear
+		left,right,both
+*/
+#divFont{
+	font-size: 30px;
+	font-family: 楷体;
+	color: blue;
+	text-decoration: underline;
+	text-align: center;
+	background-color: pink;
+}
+#divBackImage{
+	background-image: url("../images/520bbj_1002215.jpg");
+	background-repeat: repeat-y;
+	height: 300px;
+}
+#ul1{
+	list-style-type: hiragana;
+}
+#ul2{
+	list-style-image: url("../images/rank_one.gif");
+}
+.hiddenme{
+	display: none;
+}
+
+/*浮动属性*/
+#leftSide{
+	width: 10%;
+	height: 100px;
+	float: left;
+	background-color: red;
+}
+#main{
+	width: 80%;
+	height: 120px;
+	float: left;
+	background-color: yellow;
+}
+#rightSide{
+	width: 10%;
+	height: 100px;
+	float: left;
+	background-color: blue;
+}
+.clear{
+	clear: both;
+}
+#footer{
+	background-color: pink;
+}
