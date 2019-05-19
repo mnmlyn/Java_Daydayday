@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>注册账户</title>
+</head>
+<body>
+	<form name="register" action="#" method="get">
+		<table>
+			<tr>
+				<td><span>用户名</span></td>
+				<td><input type="text" name="username" value="xiaozhao"></td>
+			</tr>
+			<tr>
+				<td><span>密码</span></td>
+				<td><input type="password" name="password"></td>
+			</tr>
+			<tr>
+				<td><span>性别</span></td>
+				<td>
+					<input type="radio" name="sex" value="m" checked="checked"><span>男</span>
+					<input type="radio" name="sex" value="f"><span>女</span>
+				</td>
+			</tr>
+			<tr>
+				<td><span>爱好</span></td>
+				<td>
+					<input type="checkbox" name="hobby" value="basketball" checked="checked"><span>篮球</span>
+					<input type="checkbox" name="hobby" value="football"><span>足球</span>
+					<input type="checkbox" name="hobby" value="badminton"><span>羽毛球</span>
+				</td>
+			</tr>
+			<tr>
+				<td><span>上传头像</span></td>
+				<td>
+					<input type="file" name="pic">
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="button" value="普通button">
+					<input type="submit" value="提交">
+					<input type="reset" value="重置">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="image" src="images/brand_bottom_large.jpg">
+					<input type="hidden" name="certi" value="1234">
+				</td>
+			</tr>
+			<tr>
+				<td><span>所在地</span></td>
+				<td>
+					<select name="city">
+						<option value="bj" selected="selected">北京</option>
+						<option value="sh">上海</option>
+						<option value="tj">天津</option>
+					</select>
+					<select name="area">
+						<option value="hd">海淀区</option>
+						<option value="cy" selected="selected">朝阳区</option>
+						<option value="xc">西城区</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><span>备注</span></td>
+				<td>
+					<textarea rows="10" cols="30"></textarea>
+				</td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>
