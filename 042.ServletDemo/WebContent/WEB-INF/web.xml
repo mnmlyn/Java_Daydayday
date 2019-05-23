@@ -1,40 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-  <!-- 创建Servlet实例 -->
   <servlet>
-  	<servlet-name>servletDemo1</servlet-name>
-  	<servlet-class>com.mnmlyn.ServletDemo1</servlet-class>
-  	<!-- 配置此Servlet为启动服务器时，即加载，这样Servlet的构造和init方法在启动时就被执行。可以不配置
-  		不配置时，默认第一次访问该Servlet时，再加载。
-  	 -->
-  	<load-on-startup>2</load-on-startup>
-  </servlet>
-  <!-- Servlet的URI映射 -->
-  <servlet-mapping>
-  	<servlet-name>servletDemo1</servlet-name>
-  	<url-pattern>/demo1</url-pattern>
-  </servlet-mapping>
-  
-  <!-- Demo2的配置 -->
-  <servlet>
-  	<servlet-name>servletDemo2</servlet-name>
-  	<servlet-class>com.mnmlyn.ServletDemo2</servlet-class>
+    <servlet-name>servletDemo1</servlet-name>
+    <servlet-class>com.mnmlyn.ServletDemo1</servlet-class>
+    <load-on-startup>2</load-on-startup>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>servletDemo2</servlet-name>
-  	<url-pattern>/demo2</url-pattern>
+    <servlet-name>servletDemo1</servlet-name>
+    <url-pattern>/demo1</url-pattern>
   </servlet-mapping>
-  
-  <!-- Demo3的配置 -->
   <servlet>
-  	<servlet-name>servletDemo3</servlet-name>
-  	<servlet-class>com.mnmlyn.ServletDemo3</servlet-class>
+    <servlet-name>servletDemo2</servlet-name>
+    <servlet-class>com.mnmlyn.ServletDemo2</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>servletDemo3</servlet-name>
-  	<url-pattern>/demo3</url-pattern>
+    <servlet-name>servletDemo2</servlet-name>
+    <url-pattern>/demo2</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <servlet-name>servletDemo3</servlet-name>
+    <servlet-class>com.mnmlyn.ServletDemo3</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>servletDemo3</servlet-name>
+    <url-pattern>/demo3</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>context-param</param-name>
+    <param-value>context-value</param-value>
+  </context-param>
   <display-name>ServletDemo</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -44,5 +38,4 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
 </web-app>
