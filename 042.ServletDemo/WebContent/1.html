@@ -3,10 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <title>静态页面</title>
+<script type="text/javascript">
+	function changeCode(){
+		// 得到图片元素
+		var img = document.getElementsByTagName("img")[0];
+		img.src = "/042.ServletDemo/demo9?t=" + new Date().getTime();
+	}
+</script>
 </head>
 <body>
 <h1>这是一个静态页面</h1>
 <p>直接放在WebContent目录下</p>
 <p>浏览器通过: http://localhost:8081/042.ServletDemo/1.html 进行访问</p>
+<h2>顺便用这个页面测试一下验证码生成</h2>
+<form action="#" method="post">
+	用户名:<input type="text" name="userName"><br>
+	密码:<input type="password" name="password"><br>
+	验证码:<input type="text" name="code">
+	<img alt="code" src="/042.ServletDemo/demo9" onclick="changeCode()" style="height:21px;"><br>
+	<input type="submit" value="登录">
+</form>
 </body>
 </html>
