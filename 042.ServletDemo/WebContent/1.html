@@ -16,12 +16,39 @@
 <p>直接放在WebContent目录下</p>
 <p>浏览器通过: http://localhost:8081/042.ServletDemo/1.html 进行访问</p>
 <h2>顺便用这个页面测试一下验证码生成</h2>
-<form action="#" method="post">
-	用户名:<input type="text" name="userName"><br>
-	密码:<input type="password" name="password"><br>
+<form action="/042.ServletDemo/demo12" method="post">
+	用户名:<input type="text" name="userName">
+	<br>
+	密码:<input type="password" name="password">
+	<br>
+	<!-- 一般value不写为中文，这里只是示例 -->
+	性别:<input type="radio" name="sex" value="男" checked="checked">男
+	<input type="radio" name="sex" value="女">女
+	<br>
+	爱好:<input type="checkbox" name="hobby" value="篮球" checked="checked">篮球
+	<input type="checkbox" name="hobby" value="足球">足球
+	<input type="checkbox" name="hobby" value="羽毛球">羽毛球
+	<br>
+	城市:<select name="city">
+		<option value="0">---请选择---</option>
+		<option value="bj">北京</option>
+		<option value="sh">上海</option>
+		<option value="hz">杭州</option>
+	</select>
+	<br>
 	验证码:<input type="text" name="code">
 	<img alt="code" src="/042.ServletDemo/demo9" onclick="changeCode()" style="height:21px;"><br>
 	<input type="submit" value="登录">
+</form>
+<hr>
+<form action="/042.ServletDemo/demo13" method="post">
+	演示InputStream方式获取表单
+	<br>
+	用户名<input type="text" name="userName">
+	<br>
+	密码<input type="password" name="password">
+	<br>
+	<input type="submit" value="提交">
 </form>
 </body>
 </html>
